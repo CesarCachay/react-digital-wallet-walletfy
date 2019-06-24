@@ -5,8 +5,8 @@ import offlineSync from "./middlewares/offline-sync";
 
 import { fakeCategories, fakeMovements } from "./fake-data/fake-data";
 const initialState = {
-  categories: fakeCategories,
-  movements: fakeMovements
+  categories: JSON.parse(localStorage.getItem("categories")) || fakeCategories,
+  movements: JSON.parse(localStorage.getItem("movements")) || fakeMovements
 };
 
 const composer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
